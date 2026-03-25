@@ -1,34 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<Html lang="en">
+<!--
+Author: Michael Santay
+Project: MatchmakerWebLite
+-->
 <head>
     <meta charset="UTF-8">
-    <title>Hello World</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="MFTW.css">
+    <title>Matchmaker Lite</title>
 </head>
-<body>
 
-    <div class="container">
-        <div class="card">
-            <h1>Hello World 🌍</h1>
-            <p>Welcome to my web page.</p>
-        </div>
+<Body>
+    <H1>Matchmaker Lite</H1>
+    
+    <P>Instructions</P>
 
-        <div class="card">
-            <h2>About This Page</h2>
-            <p>This is a styled example using HTML and CSS.</p>
-        </div>
 
-        <div class="card">
-            <h2>Built By</h2>
-            <p>Michael Santay</p>
-        </div>
-    </div>
+<select id="Pop" autocomplete="off">
+    <option value="" disabled selected hidden>Favorite Soda?</option>
 
-</body>
-</html>
+    <option value="5">Dr pepper</option>
+    <option value="2">Pepsi</option>
+    <option value="1">Coke</option>
+    <option value="4">Rootbeer</option>
+    <option value="3">Ginger ale</option>
+</select>
+<br /><br />
+
+<select id="Car" autocomplete="off">
+    <option value="" disabled selected hidden>Favorite Car?</option>
+
+    <option value="4">Mustang</option>
+    <option value="2">Ferrari</option>
+    <option value="5">Corvette</option>
+    <option value="3">Charger</option>
+    <option value="1">Lamborghini</option>
+</select>
+<br /><br />
+
+<select id="Coffee" autocomplete="off">
+    <option value="" disabled selected hidden>Coffee is awesome!</option>
+
+    <option value="5">Strongly Agree</option>
+    <option value="4">Agree</option>
+    <option value="3">Neither agree nor disagree</option>
+    <option value="2">Disagree</option>
+    <option value="1">Strongly dissagree</option>
+</select>
+<br /><br />
+
+<select id="placeholder" autocomplete="off">
+    <option value="" disabled selected hidden>Momo the cat is the best</option>
+
+    <option value="5">Strongly Agree</option>
+    <option value="4">Agree</option>
+    <option value="3">Neither agree nor disagree</option>
+    <option value="2">Disagree</option>
+    <option value="1">Strongly dissagree</option>
+</select>
+<br /><br />
+
+<select id="Placeholder" autocomplete="off">
+    <option value="" disabled selected hidden>Placeholder</option>
+
+    <option value="5">Strongly Agree</option>
+    <option value="4">Agree</option>
+    <option value="3">Neither agree nor disagree</option>
+    <option value="2">Disagree</option>
+    <option value="1">Strongly dissagree</option>
+</select>
+
+<br /><br /><br />
+
+<Button onclick="calculateCompatibility()">Calculate Compatibility</Button>
+<p id="compatibility"> </p>
+
+
+<script>
+console.log("Starting Matchmaker Lite...")
+
+function calculateCompatibility() {
+    console.log("CalculateCompatibility()")
+
+document.getElementById("compatibility").innerHTML = "Your Compatibility is..."
+
+}
+
+</script>
+
+</Body>
+
+</Html>
