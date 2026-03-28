@@ -5,16 +5,29 @@
 Author: Michael Santay
 Project: MatchmakerWeb
 -->
-
 <head>
     <meta charset="UTF-8">
     <title>Matchmaker</title>
+   
+    <!--Links my MFTW.css to my HTML-->
+    <link rel="stylesheet" href="MFTW.css">
+    <link rel="icon" href="MFTW.ico">
 </head>
 
-<Body>
-    <H1>Matchmaker</H1>
-    <P>Instructions</P>
+        <Body>
+<div class="box-container">
+    <div class="box">
+    <H1>Hi! My name is Michael</H1>
+    <P>Select some responses to see if were meant to be friends!... or... mortal enemies!</P>
+    </div>
 
+    <img src="Momo1.png" class="momo">
+</div>
+
+<br /><br />
+
+
+<!--question #1-->
 <select id="q1" autocomplete="off">
     <option value="" disabled selected hidden>Favorite Soda?</option>
     <option value="5">Dr pepper</option>
@@ -25,6 +38,7 @@ Project: MatchmakerWeb
 </select>
 <br /><br />
 
+<!--question #2-->
 <select id="q2" autocomplete="off">
     <option value="" disabled selected hidden>Favorite Car?</option>
     <option value="4">Mustang</option>
@@ -35,6 +49,7 @@ Project: MatchmakerWeb
 </select>
 <br /><br />
 
+<!--question #3-->
 <select id="q3" autocomplete="off">
     <option value="" disabled selected hidden>Coffee is awesome!</option>
     <option value="5">Strongly Agree</option>
@@ -45,6 +60,7 @@ Project: MatchmakerWeb
 </select>
 <br /><br />
 
+<!--question #4-->
 <select id="q4" autocomplete="off">
     <option value="" disabled selected hidden>Momo the cat is the best</option>
     <option value="5">Strongly Agree</option>
@@ -55,6 +71,7 @@ Project: MatchmakerWeb
 </select>
 <br /><br />
 
+<!--question #5-->
 <select id="q5" autocomplete="off">
     <option value="" disabled selected hidden>DieHard is not a Christmas movie</option>
     <option value="1">Strongly Agree</option>
@@ -64,81 +81,21 @@ Project: MatchmakerWeb
     <option value="5">Strongly dissagree</option>
 </select>
 
-<br /><br /><br /> 
-<Button onclick="calculateCompatibility()">Calculate Compatibility</Button>
+
+<!--Button-->
+<br /><br />
+<button id="calcBtn" onclick="calculateCompatibility()">Calculate Compatibility</button>
 <p id="compatibility"></p>
 
-<script>
-console.log("Starting Matchmaker Lite...")
+<audio id="sound1" src="sound1.mp3"></audio>
+<audio id="sound2" src="sound2.mp3"></audio>
+<audio id="sound3" src="sound3.mp3"></audio>
+<audio id="sound4" src="sound4.mp3"></audio>
+<audio id="sound5" src="sound5.mp3"></audio>
+<audio id="sound6" src="sound6.mp3"></audio>
 
-function calculateCompatibility() {
-    console.log("CalculateCompatibility()")
+<!--Links my MFTW.js to my HTML-->
+<script src="MFTW.js"></script>
 
-    //Data array for choices
-    const DESIRED_RESPONSE = [
-        5, // Question 5 
-        4, // Question 4
-        3, // Question 3
-        2, // Question 2
-        1, // Question 1
-    ]
-
-    const MAX_SCORE = 25;
-
-    //pulls values from questions 
-    let question1Response = document.getElementById('q1').selectedOptions[0].value;
-    let question2Response = document.getElementById('q2').selectedOptions[0].value;
-    let question3Response = document.getElementById('q3').selectedOptions[0].value;
-    let question4Response = document.getElementById('q4').selectedOptions[0].value;
-    let question5Response = document.getElementById('q5').selectedOptions[0].value;
-
-    //Logs the values 
-    console.log("Question 1 Answers:")
-    console.log(document.getElementById('q1').selectedOptions[0].text)
-    console.log(document.getElementById('q1').selectedOptions[0].value)
-    console.log(question1Response)
-
-    console.log("Question 2 Answers:")
-    console.log(document.getElementById('q2').selectedOptions[0].text)
-    console.log(document.getElementById('q2').selectedOptions[0].value)
-    console.log(question1Response)
-
-    console.log("Question 3 Answers:")
-    console.log(document.getElementById('q3').selectedOptions[0].text)
-    console.log(document.getElementById('q3').selectedOptions[0].value)
-    console.log(question1Response)
-
-    console.log("Question 4 Answers:")
-    console.log(document.getElementById('q4').selectedOptions[0].text)
-    console.log(document.getElementById('q4').selectedOptions[0].value)
-    console.log(question1Response)
-
-    console.log("Question 5 Answers:")
-    console.log(document.getElementById('q5').selectedOptions[0].text)
-    console.log(document.getElementById('q5').selectedOptions[0].value)
-    console.log(question1Response)
-    
-    let question1Compatibility = 5 - Math.abs(question1Response - DESIRED_RESPONSE[0]);
-    let question2Compatibility = 5 - Math.abs(question2Response - DESIRED_RESPONSE[0]);
-    let question3Compatibility = 5 - Math.abs(question3Response - DESIRED_RESPONSE[0]);
-    let question4Compatibility = 5 - Math.abs(question4Response - DESIRED_RESPONSE[0]);
-    let question5Compatibility = 5 - Math.abs(question5Response - DESIRED_RESPONSE[0]);
-
-    console.log("c1="+question1Compatibility);
-    console.log("c2="+question2Compatibility);
-    console.log("c3="+question3Compatibility);
-    console.log("c4="+question4Compatibility);
-    console.log("c5="+question5Compatibility);
-
-    let totalCompatibility = question1Compatibility + question2Compatibility + question3Compatibility + question4Compatibility + question5Compatibility;
-
-    totalCompatibility *= 100 / MAX_SCORE;
-    totalCompatibility = Math.round(totalCompatibility);
-    console.log("tc="+ totalCompatibility);
-
-    document.getElementById("compatibility").innerHTML = "Your Compatibility is: " + totalCompatibility;
-}
-
-</script>
-</Body>
+</body>
 </Html>
