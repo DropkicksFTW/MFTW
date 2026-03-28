@@ -68,6 +68,7 @@ function calculateCompatibility() {
     totalCompatibility = Math.round(totalCompatibility);
     console.log("tc="+ totalCompatibility);
 
+    //if statements to create unique replies
 if (totalCompatibility === 100){
     message = "Perfect match!";
     document.getElementById("sound6").play();
